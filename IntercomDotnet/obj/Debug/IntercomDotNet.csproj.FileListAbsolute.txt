@@ -1,0 +1,8 @@
+C:\dev\intercom-dotnet\intercom-dotnet\obj\Debug\intercom-dotnet.dll
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\intercom-dotnet.dll
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\intercom-dotnet.pdb
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\Newtonsoft.Json.dll
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\RestSharp.dll
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\Newtonsoft.Json.xml
+C:\dev\intercom-dotnet\intercom-dotnet\bin\Debug\RestSharp.xml
+C:\dev\intercom-dotnet\intercom-dotnet\obj\Debug\intercom-dotnet.pdb
