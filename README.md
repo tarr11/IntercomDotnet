@@ -4,6 +4,12 @@ Wrapper for Intercom.io API for .NET
 
 A lightweight wrapper around the intercom API based on RestSharp.
 
+Install via nuget 
+
+	Install-Package intercom-dotnet
+
+
+Create a client and then get some users, etc
 
 	string apikey = "";
 	string appid = "";
