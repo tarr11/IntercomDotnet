@@ -32,7 +32,7 @@ namespace intercom_dotnet
             }
             catch
             {
-                throw new RestException {Response = response};
+                throw new RestException((int)response.StatusCode, response);
             }
         }
 
@@ -74,11 +74,11 @@ namespace intercom_dotnet
                             }
                             if (r.StatusCode != System.Net.HttpStatusCode.OK)
                             {
-                                taskCompletionSource.SetException(new RestException {Response = r});
+                                taskCompletionSource.SetException(new RestException((int)r.StatusCode, r));
                                 return;
                             }
 
-                            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(r.Content);
+                            var result = JsonConvert.DeserializeObject<dynamic>(r.Content);
                             taskCompletionSource.SetResult(result);
                         }
                         catch (Exception ex)
