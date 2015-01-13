@@ -12,6 +12,11 @@ namespace intercom_dotnet
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        public double GetUnixTimestamp(DateTime inputTime)
+        {
+            return (inputTime - new DateTime(1970, 1, 1).ToUniversalTime()).TotalSeconds;
+        }
+
         public dynamic Execute(string resource, Method method, Action<RestRequest> decorator)
         {
             var client = GetRestClient();

@@ -4,8 +4,7 @@ namespace intercom_dotnet.Resources
 {
     public class Tags : Resource
     {
-        public Tags(Client client)
-            : base(client)
+        public Tags(Client client) : base(client)
         {
         }
 

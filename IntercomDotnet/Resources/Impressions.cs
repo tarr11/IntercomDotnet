@@ -1,21 +1,16 @@
-﻿using RestSharp;
+﻿using System;
 
 namespace intercom_dotnet.Resources
 {
     public class Impressions : Resource
     {
-        public Impressions(Client client)
-            : base(client)
+        public Impressions(Client client) : base(client)
         {
         }
 
         public dynamic Post(object hash)
         {
-            return Client.Execute("impressions", Method.POST, (request) =>
-                {
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(hash);
-                });
+            throw new NotSupportedException("MessageThreads has been deprecated as part of the v1 API support ending");
         }
     }
 }
