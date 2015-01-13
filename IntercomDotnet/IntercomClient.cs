@@ -7,7 +7,7 @@ namespace intercom_dotnet
         public const string ApiRoot = "https://api.intercom.io/";
 
         public IntercomClient(string appid, string apikey, Users users, Impressions impressions,
-                              MessageThreads messageThreads, Notes notes, Tags tags)
+                              MessageThreads messageThreads, Notes notes, Tags tags, Events events)
         {
             ApiKey = apikey;
             AppId = appid;
@@ -16,6 +16,7 @@ namespace intercom_dotnet
             MessageThreads = messageThreads;
             Notes = notes;
             Tags = tags;
+            Events = events;
         }
 
         public static IntercomClient GetClient(string appid, string apiKey)
@@ -32,11 +33,10 @@ namespace intercom_dotnet
                                       new Impressions(client),
                                       new MessageThreads(client),
                                       new Notes(client),
-                                      new Tags(client)
+                                      new Tags(client),
+                                      new Events(client)
                 );
         }
-
-        public Client Client { get; private set; }
 
         public string ApiKey { get; private set; }
         public string AppId { get; private set; }
@@ -46,5 +46,6 @@ namespace intercom_dotnet
         public Impressions Impressions { get; private set; }
         public MessageThreads MessageThreads { get; private set; }
         public Tags Tags { get; private set; }
+        public Events Events { get; private set; }
     }
 }
