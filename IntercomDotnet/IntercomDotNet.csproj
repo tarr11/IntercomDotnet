@@ -54,6 +54,7 @@
     <Compile Include="Resources\Notes.cs" />
     <Compile Include="Resources\Tags.cs" />
     <Compile Include="Resources\Users.cs" />
+    <Compile Include="RestException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
