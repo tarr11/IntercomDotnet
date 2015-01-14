@@ -12,7 +12,7 @@ namespace ConsoleTest
                 string apikey = "";
                 string appid = "";
                 var client = IntercomClient.GetClient(appid, apikey);
-                var user = client.Users.Get();
+                //var user = client.Users.Get();
                 var newuser = client.Users.Post(new {email = "test@test.com"});
                 var messages = client.MessageThreads.Get(email: "test@test.com");
             }
