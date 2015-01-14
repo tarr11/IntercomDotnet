@@ -26,30 +26,30 @@ namespace intercom_dotnet.Resources
                 });
         }
 
-        public dynamic Get(string email = null, int? user_id = null)
+        public dynamic Get(string email = null, int? userId = null)
         {
             return Client.Execute("users", Method.GET, (request) =>
                 {
                     if (email != null)
                         request.AddParameter("email", email);
 
-                    if (user_id != null)
-                        request.AddParameter("user_id", user_id.Value);
+                    if (userId != null)
+                        request.AddParameter("user_id", userId.Value);
                 });
         }
 
-        public dynamic Get(int page = 1, int per_page = 500, string tag_id = null, string tag_name = null, string sort = null, string order = null)
+        public dynamic Get(int page = 1, int perPage = 500, string tagId = null, string tagName = null, string sort = null, string order = null)
         {
             return Client.Execute("users", Method.GET, (request) =>
                 {
                     request.AddParameter("page", page);
-                    request.AddParameter("per_page", per_page);
+                    request.AddParameter("per_page", perPage);
 
-                    if (tag_id != null)
-                        request.AddParameter("tag_id", tag_id);
+                    if (tagId != null)
+                        request.AddParameter("tag_id", tagId);
 
-                    if (tag_name != null)
-                        request.AddParameter("tag_name", tag_name);
+                    if (tagName != null)
+                        request.AddParameter("tag_name", tagName);
 
                     if (sort != null)
                         request.AddParameter("sort", sort);

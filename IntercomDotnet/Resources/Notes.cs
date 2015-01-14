@@ -1,4 +1,4 @@
-﻿using RestSharp;
+﻿using System;
 
 namespace intercom_dotnet.Resources
 {
@@ -10,11 +10,7 @@ namespace intercom_dotnet.Resources
 
         public dynamic Post(object hash)
         {
-            return Client.Execute("notes", Method.POST, (request) =>
-                {
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(hash);
-                });
+            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
         }
     }
 }

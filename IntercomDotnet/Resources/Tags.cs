@@ -1,4 +1,4 @@
-﻿using RestSharp;
+﻿using System;
 
 namespace intercom_dotnet.Resources
 {
@@ -10,25 +10,17 @@ namespace intercom_dotnet.Resources
 
         public dynamic Get(string name)
         {
-            return Client.Execute("tags", Method.GET, (request) => request.AddParameter("name", name));
+            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
         }
 
         public dynamic Post(object hash)
         {
-            return Client.Execute("tags", Method.POST, (request) =>
-                {
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(hash);
-                });
+            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
         }
 
-        public dynamic Put(object hash)
+        public dynamic Delete(int id)
         {
-            return Client.Execute("tags", Method.PUT, (request) =>
-                {
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(hash);
-                });
+            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
         }
     }
 }
