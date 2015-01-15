@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Net;
+using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Threading;
@@ -28,6 +29,12 @@ namespace intercom_dotnet
             var response = client.Execute(request);
             try
             {
+                // See if the response was a successful one - if now, we throw an error
+                if (response.StatusCode != HttpStatusCode.Accepted && response.StatusCode != HttpStatusCode.Created)
+                {
+                    throw new Exception("Did not get a 200 or 201 from API server");
+                }
+
                 return JsonConvert.DeserializeObject<dynamic>(response.Content);
             }
             catch
