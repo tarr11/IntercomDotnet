@@ -9,6 +9,8 @@ namespace intercom_dotnet
 {
     public class Client
     {
+        private const string ErrorNotSuccessCode = "Did not get a success code (200, 201 or 202) from API server";
+
         public string ApiRoot { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -27,6 +29,13 @@ namespace intercom_dotnet
                 };
             decorator(request);
             var response = client.Execute(request);
+
+            // Check for a special case of a rate limited 
+            if ((int) response.StatusCode == (int) ExtraHttpStatusCodes.TooManyRequests)
+            {
+                throw new RestRateLimitException(response);
+            }
+            
             try
             {
                 // See if the response was a successful one - if now, we throw an error
@@ -34,14 +43,14 @@ namespace intercom_dotnet
                     response.StatusCode != HttpStatusCode.Accepted &&
                     response.StatusCode != HttpStatusCode.Created)
                 {
-                    throw new Exception("Did not get a 200, 201 or 202 from API server");
+                    throw new Exception(ErrorNotSuccessCode);
                 }
 
                 return JsonConvert.DeserializeObject<dynamic>(response.Content);
             }
-            catch
+            catch (Exception e)
             {
-                throw new RestException((int)response.StatusCode, response);
+                throw new RestException(response, e.Message);
             }
         }
 
@@ -81,9 +90,11 @@ namespace intercom_dotnet
                                 taskCompletionSource.SetException(r.ErrorException);
                                 return;
                             }
-                            if (r.StatusCode != System.Net.HttpStatusCode.OK)
+                            if (r.StatusCode != HttpStatusCode.OK && 
+                                r.StatusCode != HttpStatusCode.Created &&
+                                r.StatusCode != HttpStatusCode.Accepted)
                             {
-                                taskCompletionSource.SetException(new RestException((int)r.StatusCode, r));
+                                taskCompletionSource.SetException(new RestException(r, ErrorNotSuccessCode));
                                 return;
                             }
 

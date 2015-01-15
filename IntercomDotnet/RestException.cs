@@ -5,23 +5,20 @@ namespace intercom_dotnet
 {
     public class RestException : Exception
     {
-        public int StatusCode { get; private set; }
-        public IRestResponse Response { get; private set; }
+        public int StatusCode { get; protected set; }
+        public IRestResponse Response { get; protected set; }
+        public string ExtraInfo { get; protected set; }
 
-        public RestException(int statusCode, IRestResponse response)
+        public RestException(IRestResponse response, string extraInfo = null)
         {
-            StatusCode = statusCode;
+            StatusCode = (int)response.StatusCode;
             Response = response;
+            ExtraInfo = extraInfo;
         }
 
-        public RestException(IRestResponse response)
+        public virtual bool IsRateLimited
         {
-            Response = response;
-        }
-
-        public bool IsRateLimited
-        {
-            get { return StatusCode == 429; }
+            get { return StatusCode == (int)ExtraHttpStatusCodes.TooManyRequests; }
         }
 
         public override string Message
