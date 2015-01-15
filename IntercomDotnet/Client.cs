@@ -30,9 +30,11 @@ namespace intercom_dotnet
             try
             {
                 // See if the response was a successful one - if now, we throw an error
-                if (response.StatusCode != HttpStatusCode.Accepted && response.StatusCode != HttpStatusCode.Created)
+                if (response.StatusCode != HttpStatusCode.OK && 
+                    response.StatusCode != HttpStatusCode.Accepted &&
+                    response.StatusCode != HttpStatusCode.Created)
                 {
-                    throw new Exception("Did not get a 200 or 201 from API server");
+                    throw new Exception("Did not get a 200, 201 or 202 from API server");
                 }
 
                 return JsonConvert.DeserializeObject<dynamic>(response.Content);
