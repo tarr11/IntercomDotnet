@@ -7,8 +7,8 @@
     <ProjectGuid>{8F157ADD-AA6E-4153-8211-D752F609D29F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>intercom_dotnet</RootNamespace>
-    <AssemblyName>intercom-dotnet</AssemblyName>
+    <RootNamespace>IntercomDotNet</RootNamespace>
+    <AssemblyName>IntercomDotNet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
