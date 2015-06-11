@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace intercom_dotnet
+{
+    public abstract class Resource
+    {
+        public Client Client { get; private set; }
 
-namespace intercom_dotnet {
-	public abstract class Resource {
-		public Client Client { get; set; }
-		public Resource(Client client) {
-			this.Client = client;
-		}
-
-	}
+        protected Resource(Client client)
+        {
+            Client = client;
+        }
+    }
 }

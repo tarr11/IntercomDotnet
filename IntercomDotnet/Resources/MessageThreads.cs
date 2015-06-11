@@ -1,47 +1,27 @@
-﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace intercom_dotnet.Resources {
-	public class MessageThreads : Resource {
-		
-		public MessageThreads(Client client)
-			: base(client) {
-		}
+namespace intercom_dotnet.Resources
+{
+    [Obsolete]
+    public class MessageThreads : Resource
+    {
+        public MessageThreads(Client client) : base(client)
+        {
+        }
 
-		public dynamic Get(int? user_id = null, string email= null, int? thread_id= null, string current_url = null ) {
-			return Client.Execute("users/message_threads", Method.GET, (request) => {
+        public dynamic Get(int? userId = null, string email = null, int? threadId = null, string currentUrl = null)
+        {
+            throw new NotSupportedException("MessageThreads has been deprecated as part of the v1 API support ending");
+        }
 
-				if (thread_id != null)
-					request.AddParameter("thread_id", thread_id);
+        public dynamic Post(object hash)
+        {
+            throw new NotSupportedException("MessageThreads has been deprecated as part of the v1 API support ending");
+        }
 
-				if (email != null)
-					request.AddParameter("email", email);
-
-				if (user_id != null)
-					request.AddParameter("user_id", user_id.Value);
-
-				if (current_url != null)
-					request.AddParameter("current_url", current_url);
-			});
-		}
-
-		public dynamic Post(object hash) {
-			return Client.Execute("users/message_threads", Method.POST, (request) => {
-				request.RequestFormat = DataFormat.Json;
-				request.AddBody(hash);
-			});
-		}
-
-		public dynamic Put(object hash) {
-			return Client.Execute("users/message_threads", Method.PUT, (request) => {
-				request.RequestFormat = DataFormat.Json;
-				request.AddBody(hash);
-			});
-		}
-
-	}
+        public dynamic Put(object hash)
+        {
+            throw new NotSupportedException("MessageThreads has been deprecated as part of the v1 API support ending");
+        }
+    }
 }

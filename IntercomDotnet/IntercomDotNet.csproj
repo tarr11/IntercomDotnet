@@ -45,15 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtraHttpStatusCodes.cs" />
     <Compile Include="IntercomClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Resource.cs" />
+    <Compile Include="Resources\Events.cs" />
     <Compile Include="Resources\Impressions.cs" />
     <Compile Include="Resources\MessageThreads.cs" />
     <Compile Include="Resources\Notes.cs" />
     <Compile Include="Resources\Tags.cs" />
     <Compile Include="Resources\Users.cs" />
+    <Compile Include="RestException.cs" />
+    <Compile Include="RestRateLimitException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
