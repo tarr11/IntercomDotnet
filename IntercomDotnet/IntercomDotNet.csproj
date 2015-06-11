@@ -51,8 +51,6 @@
     <Compile Include="Client.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="Resources\Events.cs" />
-    <Compile Include="Resources\Impressions.cs" />
-    <Compile Include="Resources\MessageThreads.cs" />
     <Compile Include="Resources\Notes.cs" />
     <Compile Include="Resources\Tags.cs" />
     <Compile Include="Resources\Users.cs" />

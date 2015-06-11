@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
 
-namespace intercom_dotnet
+namespace IntercomDotNet
 {
     /// <summary>
     /// Specific exception class which also parses rate limiting information from the server if a 429 is received

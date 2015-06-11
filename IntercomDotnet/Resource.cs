@@ -1,4 +1,4 @@
-﻿namespace intercom_dotnet
+﻿namespace IntercomDotNet
 {
     public abstract class Resource
     {

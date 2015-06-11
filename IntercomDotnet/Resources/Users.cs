@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace intercom_dotnet.Resources
+namespace IntercomDotNet.Resources
 {
     public class Users : Resource
     {

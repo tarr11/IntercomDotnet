@@ -1,7 +1,7 @@
 ﻿using System;
 using RestSharp;
 
-namespace intercom_dotnet
+namespace IntercomDotNet
 {
     public class RestException : Exception
     {

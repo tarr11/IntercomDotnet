@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace intercom_dotnet
+namespace IntercomDotNet
 {
     public class Client
     {
