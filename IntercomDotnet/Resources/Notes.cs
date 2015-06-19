@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace intercom_dotnet.Resources
+namespace IntercomDotNet.Resources
 {
     public class Notes : Resource
     {
@@ -10,7 +10,7 @@ namespace intercom_dotnet.Resources
 
         public dynamic Post(object hash)
         {
-            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
+            throw new NotImplementedException("Notes have not been converted to V2 API format yet");
         }
     }
 }

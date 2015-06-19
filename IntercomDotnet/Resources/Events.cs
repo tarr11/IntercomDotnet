@@ -1,7 +1,7 @@
 ﻿using System;
 using RestSharp;
 
-namespace intercom_dotnet.Resources
+namespace IntercomDotNet.Resources
 {
     public class Events : Resource
     {

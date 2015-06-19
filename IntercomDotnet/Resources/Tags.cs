@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace intercom_dotnet.Resources
+namespace IntercomDotNet.Resources
 {
     public class Tags : Resource
     {
@@ -10,17 +10,17 @@ namespace intercom_dotnet.Resources
 
         public dynamic Get(string name)
         {
-            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
+            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
         }
 
         public dynamic Post(object hash)
         {
-            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
+            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
         }
 
         public dynamic Delete(int id)
         {
-            throw new NotImplementedException("Tags has not been converted to V2 API format yet");
+            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
         }
     }
 }
