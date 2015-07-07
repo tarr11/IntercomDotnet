@@ -5,7 +5,7 @@ namespace IntercomDotNet.Resources
 {
     public class Events : Resource
     {
-        public Events(Client client, string baseUrl) : base(client, baseUrl)
+        public Events(Client client) : base(client, "events")
         {
         }
 

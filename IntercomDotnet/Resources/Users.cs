@@ -4,7 +4,7 @@ namespace IntercomDotNet.Resources
 {
     public class Users : Resource
     {
-        public Users(Client client, string baseUrl) : base(client, baseUrl)
+        public Users(Client client) : base(client, "users")
         {
         }
 

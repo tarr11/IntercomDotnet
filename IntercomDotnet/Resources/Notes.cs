@@ -4,7 +4,7 @@
 
     public class Notes : Resource
     {
-        public Notes(Client client, string baseUrl) : base(client, baseUrl)
+        public Notes(Client client) : base(client, "notes")
         {
         }
 

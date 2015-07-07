@@ -4,11 +4,11 @@
 
     public class Tags : Resource
     {
-        public Tags(Client client, string baseUrl) : base(client, baseUrl)
+        public Tags(Client client) : base(client, "tags")
         {
         }
 
-        public dynamic Get(string name)
+        public dynamic List()
         {
             return Client.Execute(BaseUrl, Method.GET, request => { });
         }
