@@ -16,10 +16,10 @@ namespace IntercomDotNet
                              };
 
             return new IntercomClient(
-                new Users(client),
-                new Notes(client),
-                new Tags(client),
-                new Events(client));
+                new Users(client, "users"),
+                new Notes(client, "notes"),
+                new Tags(client, "tags"),
+                new Events(client, "events"));
         }
 
         private IntercomClient(Users users, Notes notes, Tags tags, Events events)

@@ -1,26 +1,33 @@
-﻿using System;
-
-namespace IntercomDotNet.Resources
+﻿namespace IntercomDotNet.Resources
 {
+    using RestSharp;
+
     public class Tags : Resource
     {
-        public Tags(Client client) : base(client)
+        public Tags(Client client, string baseUrl) : base(client, baseUrl)
         {
         }
 
         public dynamic Get(string name)
         {
-            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
+            return Client.Execute(BaseUrl, Method.GET, request => { });
         }
 
         public dynamic Post(object hash)
         {
-            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
+            return Client.Execute(BaseUrl, Method.POST, request =>
+                {
+                    request.RequestFormat = DataFormat.Json;
+                    request.AddBody(hash);
+                });
         }
 
         public dynamic Delete(int id)
         {
-            throw new NotImplementedException("Tags have not been converted to V2 API format yet");
+            return Client.Execute(BaseUrl + "/{id}", Method.DELETE, request =>
+                {
+                    request.AddUrlSegment("id", id.ToString());
+                });
         }
     }
 }

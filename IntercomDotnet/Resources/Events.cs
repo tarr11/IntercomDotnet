@@ -5,13 +5,13 @@ namespace IntercomDotNet.Resources
 {
     public class Events : Resource
     {
-        public Events(Client client) : base(client)
+        public Events(Client client, string baseUrl) : base(client, baseUrl)
         {
         }
 
         public dynamic Post(object hash)
         {
-            return Client.Execute("events", Method.POST, (request) =>
+            return Client.Execute(BaseUrl, Method.POST, request =>
                 {
                     request.RequestFormat = DataFormat.Json;
                     request.AddBody(hash);
@@ -20,7 +20,7 @@ namespace IntercomDotNet.Resources
 
         public dynamic Post(string eventName, DateTime createdAt, string userId, object metadata)
         {
-            return Client.Execute("events", Method.POST, (request) =>
+            return Client.Execute(BaseUrl, Method.POST, request =>
                 {
                     request.RequestFormat = DataFormat.Json;
                     request.AddBody(new {

@@ -4,7 +4,7 @@ namespace IntercomDotNet.Resources
 {
     public class Notes : Resource
     {
-        public Notes(Client client) : base(client)
+        public Notes(Client client, string baseUrl) : base(client, baseUrl)
         {
         }
 
