@@ -1,7 +1,7 @@
-﻿namespace IntercomDotNet.Resources
-{
-    using RestSharp;
+﻿using RestSharp;
 
+namespace IntercomDotNet.Resources
+{
     public class Tags : Resource
     {
         public Tags(Client client) : base(client, "tags")
@@ -24,7 +24,7 @@
 
         public dynamic Delete(int id)
         {
-            return Client.Execute(BaseUrl + "/{id}", Method.DELETE, request =>
+            return Client.Execute(BaseUrlWithId, Method.DELETE, request =>
                 {
                     request.AddUrlSegment("id", id.ToString());
                 });

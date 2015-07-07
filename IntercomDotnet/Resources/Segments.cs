@@ -1,7 +1,7 @@
-﻿namespace IntercomDotNet.Resources
-{
-    using RestSharp;
+﻿using RestSharp;
 
+namespace IntercomDotNet.Resources
+{
     public class Segments : Resource
     {
         public Segments(Client client) : base(client, "segments")
@@ -15,7 +15,7 @@
 
         public dynamic Get(int id)
         {
-            return Client.Execute(BaseUrl + "/{id}", Method.GET, request =>
+            return Client.Execute(BaseUrlWithId, Method.GET, request =>
                 {
                     request.AddUrlSegment("id", id.ToString());
                 });
