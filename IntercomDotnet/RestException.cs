@@ -25,8 +25,8 @@ namespace IntercomDotNet
         {
             get
             {
-                return string.Format("Status code: {0}\nResponse Status: {1}\nResponse Content: {2}", StatusCode,
-                                     Response.StatusDescription, Response.Content);
+                return string.Format("Status code: {0}\nResponse Status: {1}\nResponse Content: {2}", 
+                                     StatusCode, Response.StatusDescription, Response.Content);
             }
         }
     }

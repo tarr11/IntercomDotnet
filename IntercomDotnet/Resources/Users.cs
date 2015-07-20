@@ -4,13 +4,13 @@ namespace IntercomDotNet.Resources
 {
     public class Users : Resource
     {
-        public Users(Client client) : base(client)
+        public Users(Client client) : base(client, "users")
         {
         }
 
         public dynamic Post(object hash)
         {
-            return Client.Execute("users", Method.POST, (request) =>
+            return Client.Execute(BaseUrl, Method.POST, request =>
                 {
                     request.RequestFormat = DataFormat.Json;
                     request.AddBody(hash);
@@ -19,7 +19,7 @@ namespace IntercomDotNet.Resources
 
         public dynamic Delete(object hash)
         {
-            return Client.Execute("users", Method.DELETE, (request) =>
+            return Client.Execute(BaseUrl, Method.DELETE, request =>
                 {
                     request.RequestFormat = DataFormat.Json;
                     request.AddBody(hash);
@@ -28,7 +28,7 @@ namespace IntercomDotNet.Resources
 
         public dynamic Get(string email = null, int? userId = null)
         {
-            return Client.Execute("users", Method.GET, (request) =>
+            return Client.Execute(BaseUrl, Method.GET, request =>
                 {
                     if (email != null)
                         request.AddParameter("email", email);
@@ -40,7 +40,7 @@ namespace IntercomDotNet.Resources
 
         public dynamic Get(int page = 1, int perPage = 500, string tagId = null, string tagName = null, string sort = null, string order = null)
         {
-            return Client.Execute("users", Method.GET, (request) =>
+            return Client.Execute(BaseUrl, Method.GET, request =>
                 {
                     request.AddParameter("page", page);
                     request.AddParameter("per_page", perPage);
