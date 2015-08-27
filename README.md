@@ -22,7 +22,7 @@ A lightweight wrapper around the intercom API based on RestSharp.
 
 * [Users](https://doc.intercom.io/api/#users)
 * [Events](https://doc.intercom.io/api/#events)
-
-Please feel free to add support for more endpoints. As I have time I will try to implement some more as well.
-The old endpoints which were previously supported in the v1 edition of this library have been marked obsolete
-and will throw exceptions. These will be removed ASAP and more features implemented.
+* [Companies](https://doc.intercom.io/api/#companies)
+* [Tags](https://doc.intercom.io/api/#tags)
+* [Segments](https://doc.intercom.io/api/#segments)
+* [Notes](https://doc.intercom.io/api/#notes)
