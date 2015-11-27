@@ -26,7 +26,7 @@ namespace IntercomDotNet.Resources
                 });
         }
 
-        public dynamic Get(string email = null, int? userId = null)
+        public dynamic Get(string email = null, string userId = null)
         {
             return Client.Execute(BaseUrl, Method.GET, request =>
                 {
@@ -34,7 +34,7 @@ namespace IntercomDotNet.Resources
                         request.AddParameter("email", email);
 
                     if (userId != null)
-                        request.AddParameter("user_id", userId.Value);
+                        request.AddParameter("user_id", userId);
                 });
         }
 
