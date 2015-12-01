@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using System;
 
 namespace IntercomDotNet.Resources
 {
@@ -26,15 +27,21 @@ namespace IntercomDotNet.Resources
                 });
         }
 
+        [Obsolete("userId is a string in the Intercom API so please use the string-based overload going forward.")]
         public dynamic Get(string email = null, int? userId = null)
+        {
+            return Get(email, userId?.ToString());
+        }
+
+        public dynamic Get(string email = null, string userId = null)
         {
             return Client.Execute(BaseUrl, Method.GET, request =>
                 {
                     if (email != null)
                         request.AddParameter("email", email);
 
-                    if (userId != null)
-                        request.AddParameter("user_id", userId.Value);
+                    if (!string.IsNullOrEmpty(userId))
+                        request.AddParameter("user_id", userId);
                 });
         }
 
