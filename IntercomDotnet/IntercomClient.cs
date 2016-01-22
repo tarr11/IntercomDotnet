@@ -21,10 +21,11 @@ namespace IntercomDotNet
                 new Tags(client),
                 new Events(client),
                 new Segments(client),
-                new Companies(client));
+                new Companies(client),
+                new Messages(client));
         }
 
-        private IntercomClient(Users users, Notes notes, Tags tags, Events events, Segments segments, Companies companies)
+        private IntercomClient(Users users, Notes notes, Tags tags, Events events, Segments segments, Companies companies, Messages messages)
         {
             Users = users;
             Notes = notes;
@@ -32,6 +33,7 @@ namespace IntercomDotNet
             Events = events;
             Segments = segments;
             Companies = companies;
+            Messages = messages;
         }
 
         public Users Users { get; private set; }
@@ -40,5 +42,6 @@ namespace IntercomDotNet
         public Events Events { get; private set; }
         public Segments Segments { get; private set; }
         public Companies Companies { get; private set; }
+        public Messages Messages { get; private set; }
     }
 }
