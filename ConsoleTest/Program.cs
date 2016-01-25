@@ -17,6 +17,8 @@ namespace ConsoleTest
                 var newuser = client.Users.Post(new { email = "test@test.com" });
 
                 //client.Events.Post("test_event", DateTime.Now, "userid", new { });
+
+                //client.Messages.Post("email", "Hello", "This is just a test message", "personal", "put admin id here", "put user_id here");
             }
             catch (Exception ex)
             {
