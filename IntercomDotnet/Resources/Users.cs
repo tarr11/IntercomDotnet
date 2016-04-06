@@ -18,13 +18,30 @@ namespace IntercomDotNet.Resources
                 });
         }
 
-        public dynamic Delete(object hash)
+        /// <summary>
+        /// Delete a User using the id parameters
+        /// </summary>
+        /// <param name="id">The id defined by Intercom</param>
+        /// <returns></returns>
+        public dynamic Delete(string id)
+        {
+            return Client.Execute(BaseUrlWithId, Method.DELETE, request =>
+            {
+                request.AddUrlSegment("id", id);
+            });
+        }
+
+        /// <summary>
+        /// Delete a User using the user_id parameter
+        /// </summary>
+        /// <param name="userId">The user_id defined by you</param>
+        /// <returns></returns>
+        public dynamic DeleteWithUserId(string userId)
         {
             return Client.Execute(BaseUrl, Method.DELETE, request =>
-                {
-                    request.RequestFormat = DataFormat.Json;
-                    request.AddBody(hash);
-                });
+            {
+                request.AddParameter("user_id", userId);
+            });
         }
 
         [Obsolete("userId is a string in the Intercom API so please use the string-based overload going forward.")]
