@@ -50,35 +50,35 @@ namespace ConsoleTest
 
                 // Admins examples
                 //Get list of admins
-                client.Admin.GetAllAdmins();
+                //client.Admin.GetAllAdmins();
 
                 //View Admin
-                client.Admin.ViewAdmin("484781");
+                //client.Admin.ViewAdmin("adminID");
 
                 //Counts examples
                 //Get App Count
-                client.Count.GetAppCount();
+                //client.Count.GetAppCount();
 
                 //Get Conversation Count
-                client.Count.GetConversationAppCount();
+                //client.Count.GetConversationAppCount();
 
                 //Get Conversation Admin Count
-                client.Count.GetConversationAdminCount();
+                //client.Count.GetConversationAdminCount();
 
                 //Get User Tag Count
-                client.Count.GetUserTagCount();
+                //client.Count.GetUserTagCount();
 
                 //Get User Segment Count
-                client.Count.GetUserSegmentCount();
+                //client.Count.GetUserSegmentCount();
 
                 //Get Company Segment Count
-                client.Count.GetCompanySegmentCount();
+                //client.Count.GetCompanySegmentCount();
 
                 //Get Company Tag Count
-                client.Count.GetCompanyTagCount();
+                //client.Count.GetCompanyTagCount();
 
                 //Get Company User Count
-                client.Count.GetCompanyUserCount();
+                //client.Count.GetCompanyUserCount();
 
             }
             catch (Exception ex)
