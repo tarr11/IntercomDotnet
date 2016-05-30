@@ -48,6 +48,38 @@ namespace ConsoleTest
                 //Close a conversation
                 //client.Conversations.CloseConversations("conversationID", "adminID");
 
+                // Admins examples
+                //Get list of admins
+                client.Admin.GetAllAdmins();
+
+                //View Admin
+                client.Admin.ViewAdmin("484781");
+
+                //Counts examples
+                //Get App Count
+                client.Count.GetAppCount();
+
+                //Get Conversation Count
+                client.Count.GetConversationAppCount();
+
+                //Get Conversation Admin Count
+                client.Count.GetConversationAdminCount();
+
+                //Get User Tag Count
+                client.Count.GetUserTagCount();
+
+                //Get User Segment Count
+                client.Count.GetUserSegmentCount();
+
+                //Get Company Segment Count
+                client.Count.GetCompanySegmentCount();
+
+                //Get Company Tag Count
+                client.Count.GetCompanyTagCount();
+
+                //Get Company User Count
+                client.Count.GetCompanyUserCount();
+
             }
             catch (Exception ex)
             {

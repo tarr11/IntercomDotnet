@@ -23,10 +23,12 @@ namespace IntercomDotNet
                 new Segments(client),
                 new Companies(client),
                 new Messages(client),
-                new Conversations(client));
+                new Conversations(client),
+                new Admins(client),
+                new Counts(client));
         }
 
-        private IntercomClient(Users users, Notes notes, Tags tags, Events events, Segments segments, Companies companies, Messages messages, Conversations conversation)
+        private IntercomClient(Users users, Notes notes, Tags tags, Events events, Segments segments, Companies companies, Messages messages, Conversations conversation, Admins admin, Counts count)
         {
             Users = users;
             Notes = notes;
@@ -36,6 +38,9 @@ namespace IntercomDotNet
             Companies = companies;
             Messages = messages;
             Conversations = conversation;
+            Admin = admin;
+            Count = count;
+            
         }
 
         public Users Users { get; private set; }
@@ -46,5 +51,7 @@ namespace IntercomDotNet
         public Companies Companies { get; private set; }
         public Messages Messages { get; private set; }
         public Conversations Conversations { get; private set; }
+        public Admins Admin { get; private set; }
+        public Counts Count { get; private set; }
     }
 }
