@@ -50,8 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Resource.cs" />
+    <Compile Include="Resources\Admins.cs" />
     <Compile Include="Resources\Companies.cs" />
     <Compile Include="Resources\Conversations.cs" />
+    <Compile Include="Resources\Counts.cs" />
     <Compile Include="Resources\Messages.cs" />
     <Compile Include="Resources\Events.cs" />
     <Compile Include="Resources\Segments.cs" />
